@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-search: #151515;
+}
+
+body {
+  background-color: black;
+}
