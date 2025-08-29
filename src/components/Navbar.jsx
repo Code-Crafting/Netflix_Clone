@@ -14,7 +14,7 @@ function Navbar() {
     "Browse by Language",
   ];
   return (
-    <div className="flex justify-between">
+    <div className="max-w-7xl flex justify-between mt-4 px-4">
       <div className="flex gap-12 justify-between">
         <img
           src={logo}
