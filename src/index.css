@@ -4,8 +4,12 @@
   --color-search: #151515;
   --color-play: #a19e9e;
   --color-info: #454444;
+  --color-navbar: rgba(0, 0, 0, 0.8);
 }
 
 body {
   background-color: black;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
