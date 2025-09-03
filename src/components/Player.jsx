@@ -39,6 +39,8 @@ function Player() {
         info.json(),
       ]);
 
+      console.log(videoRes);
+
       console.log(infoRes);
 
       setMovieKey(videoRes.results[0].key);
@@ -52,8 +54,6 @@ function Player() {
 
     fetchData();
   }, []);
-
-  // console.log(movieInfo);
 
   return (
     <div className="h-dvh">
