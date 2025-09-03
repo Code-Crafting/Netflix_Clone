@@ -1,11 +1,15 @@
 import Home from "./components/Home";
-import Footer from "./components/Footer";
+import { Route } from "react-router";
+import { Routes } from "react-router";
+import Player from "./components/Player";
 
 function App() {
   return (
     <div className="min-h-dvh max-w-7xl mx-auto ">
-      <Home />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/player/:id" element={<Player />} />
+      </Routes>
     </div>
   );
 }

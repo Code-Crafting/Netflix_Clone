@@ -10,12 +10,13 @@ function Footer() {
     <div className="flex justify-center mt-28">
       <div className="w-[60%] mx-auto pb-8">
         <div className="flex gap-6">
-          {Object.keys(socialMedia).map((el) => {
+          {Object.keys(socialMedia).map((el, i) => {
             return (
               <img
+                key={i}
                 src={socialMedia[el]}
                 alt={el}
-                className="w-[32px] h-[32px]"
+                className="w-[32px] h-[32px] hover:cursor-pointer"
               />
             );
           })}

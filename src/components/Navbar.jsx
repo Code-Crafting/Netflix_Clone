@@ -3,31 +3,19 @@ import searchIcon from "../assets/search_icon.svg";
 import bell from "../assets/bell_icon.svg";
 import profile from "../assets/profile_img.png";
 import dropdown from "../assets/caret_icon.svg";
+import { Link } from "react-router";
 
 function Navbar() {
-  const liContent = [
-    "Home",
-    "TV Shows",
-    "Movies",
-    "New & Popular",
-    "My List",
-    "Browse by Language",
-  ];
   return (
     <div className="max-w-7xl flex justify-between py-4">
       <div className="flex gap-12 justify-between">
-        <img
-          src={logo}
-          className="w-[96px] h-[32px] hover:cursor-pointer"
-          alt="logo"
-        />
-        <ul className="flex gap-4 items-center font-medium">
-          {liContent.map((el, index) => (
-            <li key={index} className="text-white hover:cursor-pointer">
-              {el}
-            </li>
-          ))}
-        </ul>
+        <Link to="/">
+          <img
+            src={logo}
+            className="w-[96px] h-[32px] hover:cursor-pointer"
+            alt="logo"
+          />
+        </Link>
       </div>
 
       <div className="flex gap-6 ">
