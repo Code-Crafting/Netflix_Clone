@@ -58,7 +58,7 @@ function SwiperJs() {
             <SwiperSlide className="text-white mask-l-from-90%">
               <img
                 src={`https://image.tmdb.org/t/p/w1280/${backdrop_path}`}
-                className="w-full h-full mask-l-from-50%"
+                className="w-full h-full mask-l-from-50% mask-b-from-50%"
               />
 
               <div className="w-1/2 absolute bottom-48 left-24">

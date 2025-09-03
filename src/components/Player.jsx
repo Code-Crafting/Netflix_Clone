@@ -43,7 +43,10 @@ function Player() {
 
       console.log(infoRes);
 
-      setMovieKey(videoRes.results[0].key);
+      if (videoRes.results.length) {
+        setMovieKey(videoRes.results[0].key);
+      }
+
       setMovieInfo({
         title: infoRes.title,
         genres: infoRes.genres,
