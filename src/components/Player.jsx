@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router";
 import back from "../assets/back_arrow_icon.png";
 import { useEffect, useState } from "react";
+import PlayerShrimmer from "./Shrimmer/PlayerShrimmer";
 
 function Player() {
   const { id } = useParams();
@@ -76,24 +77,28 @@ function Player() {
             ></iframe>
           </div>
 
-          <div className="w-1/2 text-white flex flex-col gap-4 justify-center">
-            <h1 className="text-3xl font-semibold">{title}</h1>
-            <p className="text-overview">" {overview} "</p>
-            <div className="flex gap-4 items-center text-xl">
-              <p className="font-medium">Release Date:</p>
-              <p>{date.split("-").reverse().join("-")}</p>
+          {date ? (
+            <div className="w-1/2 text-white flex flex-col gap-4 justify-center">
+              <h1 className="text-3xl font-semibold">{title}</h1>
+              <p className="text-overview">" {overview} "</p>
+              <div className="flex gap-4 items-center text-xl">
+                <p className="font-medium">Release Date:</p>
+                <p>{date.split("-").reverse().join("-")}</p>
+              </div>
+              <div className="flex gap-4 items-center text-xl">
+                <p className="font-medium">Genres: </p>
+                {genres.map((el, i) => {
+                  return (
+                    <p key={i} className="">
+                      {i < genres.length - 1 ? el.name + "," : el.name}
+                    </p>
+                  );
+                })}
+              </div>
             </div>
-            <div className="flex gap-4 items-center text-xl">
-              <p className="font-medium">Genres: </p>
-              {genres.map((el, i) => {
-                return (
-                  <p key={i} className="">
-                    {i < genres.length - 1 ? el.name + "," : el.name}
-                  </p>
-                );
-              })}
-            </div>
-          </div>
+          ) : (
+            <PlayerShrimmer />
+          )}
         </div>
       </div>
     </div>

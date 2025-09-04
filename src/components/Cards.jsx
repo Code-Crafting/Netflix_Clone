@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import CardsShrimmer from "./Shrimmer/CardsShrimmer";
 
 function Cards({ category, dataCategory }) {
   const options = {
@@ -28,25 +29,35 @@ function Cards({ category, dataCategory }) {
       <h1 className="text-white font-600 text-2xl">{category}</h1>
       <div className="overflow-x-scroll no-scrollbar scroll-smooth snap-start">
         <div className="w-min flex gap-4 mt-4 ">
-          {popularMovieData.map((el) => {
-            // console.log(el);
-            const { title, backdrop_path, id } = el;
+          {popularMovieData.length ? (
+            popularMovieData.map((el) => {
+              // console.log(el);
+              const { title, backdrop_path, id } = el;
 
-            return (
-              <Link to={`/player/${id}`} key={id}>
-                <div className="w-2xs relative hover:cursor-pointer">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
-                    alt="movie"
-                    className="w-full rounded-md"
-                  />
-                  <p className="text-white text-lg absolute bottom-0 right-4 font-medium text-right [text-shadow:1px_1px_2px_black]">
-                    {title}
-                  </p>
-                </div>
-              </Link>
-            );
-          })}
+              return (
+                <Link to={`/player/${id}`} key={id}>
+                  <div className="w-2xs relative hover:cursor-pointer">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
+                      alt="movie"
+                      className="w-full rounded-md"
+                    />
+                    <p className="text-white text-lg absolute bottom-0 right-4 font-medium text-right [text-shadow:1px_1px_2px_black]">
+                      {title}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })
+          ) : (
+            <>
+              <CardsShrimmer />
+              <CardsShrimmer />
+              <CardsShrimmer />
+              <CardsShrimmer />
+              <CardsShrimmer />
+            </>
+          )}
         </div>
       </div>
     </div>
