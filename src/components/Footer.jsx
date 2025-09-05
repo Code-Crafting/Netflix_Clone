@@ -7,8 +7,8 @@ import Links from "./Links";
 function Footer() {
   const socialMedia = { facebook, youtube, twitter, instagram };
   return (
-    <div className="flex justify-center mt-28">
-      <div className="w-[60%] mx-auto pb-8">
+    <div className="flexjustify-center md:mt-28 mt-20">
+      <div className="lg:w-[60%] md:w-[80%] w-full mx-auto pb-8 px-2 md:px-0">
         <div className="flex gap-6">
           {Object.keys(socialMedia).map((el, i) => {
             return (
@@ -16,12 +16,12 @@ function Footer() {
                 key={i}
                 src={socialMedia[el]}
                 alt={el}
-                className="w-[32px] h-[32px] hover:cursor-pointer"
+                className="448px:w-[32px] 448px:h-[32px] w-[28px] h-[28px] hover:cursor-pointer"
               />
             );
           })}
         </div>
-        <div className="flex justify-between mt-6">
+        <div className="flex flex-wrap justify-between mt-6">
           <Links
             links={["Audio Description", "Investor Relations", "Legal Noices"]}
           />

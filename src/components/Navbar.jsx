@@ -30,36 +30,48 @@ function Navbar({ movieName, setMovieName, setSearchData }) {
   }, [movieName]);
 
   return (
-    <div className="max-w-7xl flex justify-between py-4">
-      <div className="flex gap-12 justify-between">
+    <div className="max-w-7xl flex justify-between py-2 md:py-4 px-2">
+      <div className="flex items-center">
         <Link to="/">
           <img
             src={logo}
-            className="w-[96px] h-[32px] hover:cursor-pointer"
+            className="md:w-[96px] md:h-[32px] 512px:w-[80px] 512px:h-[28px] w-[64px] hover:cursor-pointer"
             alt="logo"
           />
         </Link>
       </div>
 
       <div className="flex gap-6 ">
-        <div className="flex gap-4 bg-search w-[160px] py-2 px-4 rounded-sm hover:cursor-pointer">
-          <img src={searchIcon} alt="search_icon" className="w-[16px]" />
+        <div className="flex items-center md:gap-4 gap-2 bg-search md:w-[160px] w-[96px] py-2 px-4 rounded-sm hover:cursor-pointer ">
+          <img
+            src={searchIcon}
+            alt="search_icon"
+            className="md:w-[16px] 512px:w-[12px] w-[10px]"
+          />
           <input
             type="text"
             placeholder="search..."
-            className="outline-none text-white w-full"
+            className="outline-none text-white w-full text-sm 512px:text-lg"
             value={movieName}
             onChange={(e) => setMovieName(e.target.value)}
           />
         </div>
-        <img src={bell} alt="bell" className="w-[20px] hover:cursor-pointer" />
-        <div className="flex gap-4 justify-between items-center">
+        <img
+          src={bell}
+          alt="bell"
+          className="md:w-[20px] 512px:w-[14px] w-[12px] hover:cursor-pointer"
+        />
+        <div className="flex 512px:gap-4 gap-2 justify-between items-center">
           <img
             src={profile}
             alt="profile"
-            className="rounded-sm hover:cursor-pointer"
+            className="w-[22px] 512px:w-[25px] md:w-full rounded-sm hover:cursor-pointer"
           />
-          <img src={dropdown} alt="dropdown" className="hover:cursor-pointer" />
+          <img
+            src={dropdown}
+            alt="dropdown"
+            className="w-[8px] hover:cursor-pointer"
+          />
         </div>
       </div>
     </div>

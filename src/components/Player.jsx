@@ -60,14 +60,14 @@ function Player() {
   }, []);
 
   return (
-    <div className="h-dvh">
-      <div className="flex flex-col justify-center h-full">
+    <div className="min-h-dvh grid place-center py-4">
+      <div className="flex flex-col justify-center h-full px-2">
         <Link to="/">
           <img src={back} alt="back" className="w-[48px]" />
         </Link>
 
-        <div className="flex justify-between h-[480px] mt-8 gap-8">
-          <div className="w-1/2 shadow-lg shadow-gray-900/50 overflow-hidden">
+        <div className="flex justify-between h-auto mt-8 lg:gap-8 gap-4 lg:flex-row flex-col">
+          <div className="lg:w-1/2 h-[400px] shadow-lg shadow-gray-900/50 overflow-hidden">
             <iframe
               src={`https://www.youtube.com/embed/${movieKey}?&rel=0`}
               height="100%"
@@ -78,14 +78,14 @@ function Player() {
           </div>
 
           {date ? (
-            <div className="w-1/2 text-white flex flex-col gap-4 justify-center">
-              <h1 className="text-3xl font-semibold">{title}</h1>
+            <div className="lg:w-1/2 md:w-[60%] w-[80%] text-white flex flex-col gap-4 justify-center">
+              <h1 className="sm:text-3xl text-2xl font-semibold">{title}</h1>
               <p className="text-overview">" {overview} "</p>
-              <div className="flex gap-4 items-center text-xl">
+              <div className="flex gap-4 items-center sm:text-xl text-lg">
                 <p className="font-medium">Release Date:</p>
                 <p>{date.split("-").reverse().join("-")}</p>
               </div>
-              <div className="flex gap-4 items-center text-xl">
+              <div className="flex gap-4 items-center sm:text-xl text-lg">
                 <p className="font-medium">Genres: </p>
                 {genres.map((el, i) => {
                   return (

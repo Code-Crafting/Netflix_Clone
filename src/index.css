@@ -6,6 +6,9 @@
   --color-info: #454444;
   --color-navbar: rgba(0, 0, 0, 0.8);
   --color-overview: #757171;
+
+  --breakpoint-512px: 32rem;
+  --breakpoint-448px: 28rem;
 }
 
 body {

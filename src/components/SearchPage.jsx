@@ -7,9 +7,12 @@ function SearchPage({ searchData }) {
         const { id, backdrop_path, title } = el;
         return (
           <Link to={`/player/${id}`} key={id}>
-            <div className="w-2xs relative h-[160px] rounded-md overflow-hidden">
+            <div className="relative sm:w-2xs w-3xs h-[160px] rounded-md overflow-hidden">
               {backdrop_path ? (
-                <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} />
+                <img
+                  src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
+                  className="h-full"
+                />
               ) : (
                 <div className="text-red-600 bg-info h-full flex justify-center items-center">
                   Poster Not Available!

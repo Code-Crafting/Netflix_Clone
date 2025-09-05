@@ -25,7 +25,7 @@ function Home() {
               <SwiperJs />
             </div>
 
-            <div className="-mt-32 flex flex-col gap-16 z-1">
+            <div className="md:-mt-32 -mt-16 flex flex-col 512px:gap-16 gap-8 z-1">
               <Cards category="Popular Movies" dataCategory="now_playing" />
               <Cards category="Blockbuster Movies" dataCategory="top_rated" />
               <Cards category="Only on Netflix" dataCategory="popular" />

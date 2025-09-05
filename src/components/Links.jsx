@@ -1,6 +1,6 @@
 function Links({ links }) {
   return (
-    <div>
+    <div className="w-[192px]">
       <ul>
         {links.map((el, i) => {
           return (

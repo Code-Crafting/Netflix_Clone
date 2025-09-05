@@ -25,8 +25,8 @@ function Cards({ category, dataCategory }) {
   }, []);
 
   return (
-    <div>
-      <h1 className="text-white font-600 text-2xl">{category}</h1>
+    <div className="pl-2">
+      <h1 className="text-white font-600 md:text-2xl text-lg">{category}</h1>
       <div className="overflow-x-scroll no-scrollbar scroll-smooth snap-start">
         <div className="w-min flex gap-4 mt-4 ">
           {popularMovieData.length ? (
@@ -36,13 +36,13 @@ function Cards({ category, dataCategory }) {
 
               return (
                 <Link to={`/player/${id}`} key={id}>
-                  <div className="w-2xs relative hover:cursor-pointer">
+                  <div className="md:w-2xs w-[180px] relative hover:cursor-pointer">
                     <img
                       src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
                       alt="movie"
                       className="w-full rounded-md"
                     />
-                    <p className="text-white text-lg absolute bottom-0 right-4 font-medium text-right [text-shadow:1px_1px_2px_black]">
+                    <p className="text-white md:text-lg text-xs absolute bottom-0 right-4 font-medium text-right [text-shadow:1px_1px_2px_black]">
                       {title}
                     </p>
                   </div>
