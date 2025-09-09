@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import CardsShrimmer from "./Shrimmer/CardsShrimmer";
 
+const API_TOKEN = import.meta.env.VITE_TMDB_TOKEN;
+
 function Cards({ category, dataCategory }) {
   const options = {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZGY4NWU3MzUxODA1MmE4YTc1ODkwOWYxNjQ3N2RlYyIsIm5iZiI6MTc1NjQ1MDk4MC42NTc5OTk4LCJzdWIiOiI2OGIxNTBhNGVmZTE3MTAwMmFiNGU2NjgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.NO1E9HehI62r7W9Lq4l60UdxoxYNGbOUvRESS5r4TgI",
+      Authorization: `Bearer ${API_TOKEN}`,
     },
   };
 
